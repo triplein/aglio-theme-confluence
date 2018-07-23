@@ -14,8 +14,19 @@ $ aglio -i blueprint.apib \
         --theme-style node_modules/aglio-theme-confluence/styles/layout-default.less \
         --theme-full-width -o MyAPI.html
 ```
-
 Theme engines for Aglio are described in more detail in the [Aglio documentation](https://github.com/danielgtaylor/aglio#customizing-output).
+
+
+## Known Issues
+Mind the following issues and limitations when using Aglio-Theme-Confluence in production:
+
+
+Issue                                                       | Workaround
+----------------------------------------------------------- | -----------
+[#1 Rendered HTML in Confluence displaces footer by 300px](https://github.com/triplein/aglio-theme-confluence/issues/1) | 
+[#2 Three-column templates produces broken HTML](https://github.com/triplein/aglio-theme-confluence/issues/2) | Use only the (default) two-column layout
+[#3 Using --theme-full-width does not make any difference](https://github.com/triplein/aglio-theme-confluence/issues/3) | Ignore the parameter, the result is always full-width to help with the embed layout
+
 
 ## Design Philosophy
 Olio is designed from the ground up to be both **fast** and **extensible** while maintaining backward compatibility with most of the original Aglio theme. It uses the following technologies:
