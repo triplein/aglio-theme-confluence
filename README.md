@@ -4,6 +4,11 @@
 
 This is Olio-Confluence, a fork of the original Olio theme engine for [Aglio](https://github.com/danielgtaylor/aglio), developed specifically to be used in Confluence HTML embeds.
 
+## Difference to Olio
++ Necessary html elements for page styling moved from ```<head>``` to ```<body>```, since Confluence strips the ```<head>``` element
++ Changed to single column display
++ Changed vertical navigation to horizontal navigation
+
 ## Example use
 
 ```bash
@@ -23,9 +28,9 @@ Mind the following issues and limitations when using Aglio-Theme-Confluence in p
 
 Issue                                                       | Workaround
 ----------------------------------------------------------- | -----------
-[#1 Rendered HTML in Confluence displaces footer by 300px](https://github.com/triplein/aglio-theme-confluence/issues/1) | 
+[#1 Rendered HTML in Confluence displaces footer by 300px](https://github.com/triplein/aglio-theme-confluence/issues/1)|
 [#2 Three-column templates produces broken HTML](https://github.com/triplein/aglio-theme-confluence/issues/2) | Use only the (default) two-column layout
-[#3 Using --theme-full-width does not make any difference](https://github.com/triplein/aglio-theme-confluence/issues/3) | Ignore the parameter, the result is always full-width to help with the embed layout
+[#3 Using --theme-full-width does not make any difference](https://github.com/triplein/aglio-theme-confluence/issues/3) | Ignore the parameter, the result is always full-width to help with the embed layout
 
 
 ## Design Philosophy
