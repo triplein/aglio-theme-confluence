@@ -1,12 +1,18 @@
-# Aglio Default Theme
+# Confluence theme for Aglio based on the Olio default theme
 
-[![Dependency Status](https://img.shields.io/david/danielgtaylor/aglio/olio-theme.svg)](https://david-dm.org/danielgtaylor/aglio) [![Build Status](http://img.shields.io/travis/danielgtaylor/aglio/olio-theme.svg)](https://travis-ci.org/danielgtaylor/aglio) [![Coverage Status](http://img.shields.io/coveralls/danielgtaylor/aglio/olio-theme.svg)](https://coveralls.io/r/danielgtaylor/aglio) [![NPM version](http://img.shields.io/npm/v/aglio-theme-olio.svg)](https://www.npmjs.org/package/aglio-theme-olio) [![License](http://img.shields.io/npm/l/aglio-theme-olio.svg)](https://www.npmjs.org/package/aglio-theme-olio)
 
-This is *Olio*, the default theme engine for [Aglio](https://github.com/danielgtaylor/aglio). It takes an [API Blueprint](http://apiblueprint.org/) AST and renders it into static HTML. Example use:
+
+This is Olio-Confluence, a fork of the original Olio theme engine for [Aglio](https://github.com/danielgtaylor/aglio), developed specifically to be used in Confluence HTML embeds.
+
+## Example use
 
 ```bash
 $ sudo npm install -g aglio
-$ aglio -i blueprint.apib -o MyAPI.html
+$ aglio -i blueprint.apib \
+        --theme-template node_modules/aglio-theme-confluence/templates/index.jade \
+        --theme-variables node_modules/aglio-theme-confluence/styles/variables-default.less \
+        --theme-style node_modules/aglio-theme-confluence/styles/layout-default.less \
+        --theme-full-width -o MyAPI.html
 ```
 
 Theme engines for Aglio are described in more detail in the [Aglio documentation](https://github.com/danielgtaylor/aglio#customizing-output).
@@ -35,20 +41,8 @@ Name           | Description
 
 **Note**: When using this theme programmatically, these options are cased like you would expect in Javascript: `--theme-full-width` becomes `options.themeFullWidth`.
 
-## Benchmark
-
-Olio makes use of aggressive caching whenever it can, which means that rendering HTML can be blazing fast. Benchmark taken on a 2015 Macbook Pro via `BENCHMARK=1 aglio -i example.apib -o example.html`:
-
-Step                | Cached | No cache
-------------------- | ------:| --------:
-Parse API Blueprint |   44ms |  44ms
-Get CSS             |    1ms |  49ms
-Get template        |    2ms | 102ms
-Call template       |   28ms |  32ms
-**Total time**      |   75ms | 227ms
-
 License
 =======
-Copyright &copy; 2016 Daniel G. Taylor
+Copyright &copy; 2018 TripleIn software solutions GmbH
 
-http://dgt.mit-license.org/
+[](http://dgt.mit-license.org/)
